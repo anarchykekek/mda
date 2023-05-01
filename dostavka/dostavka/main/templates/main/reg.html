@@ -1,0 +1,66 @@
+
+{% extends 'main/layout.html' %}
+{% load static%}
+{% block title %} Личный кабинет {% endblock %}
+
+
+
+
+{% block content %}
+    <div class="features">
+        <body>
+        <h1> Регистрация </h1>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.name }} <br>
+            {{ form.age }} <br>
+            {{ form.area }} <br>
+            {{ form.address }} <br>
+            <button type="submit"> Зарегестрироваться </button>
+        </form>
+        <a href="{% url 'entrance' %}">
+            <button class="b" > Вход </button>
+        </a>
+        <style>
+            h1{ font-family: cursive; }
+            form {
+                width: 20%;
+                margin-left: 565px;
+                line-height: 10px;
+                font-family: cursive;
+            }
+            button {
+                display: inline-block;
+                color: black ;
+                font-weight: 700;
+                text-decoration: none;
+                user-select: none;
+                padding: .5em 2em;
+                outline: none;
+                border: 2px solid;
+                border-radius: 1px;
+                transition: 0.2s;
+
+
+            }
+            button:hover { background: #CD9575 ; }
+            button:active { background: rgba(255,255,255,.2); }
+
+            .b {
+                margin-top: 50px;
+                font-family: cursive;
+            }
+
+        </style>
+        </body>
+
+
+
+        {{ main }}
+        {% for el in values %}
+            <p> {{ el }} </p>
+        {% endfor %}
+
+    </div>
+{% endblock %}

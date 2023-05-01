@@ -1,0 +1,46 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Account {% endblock %}
+
+
+{% block content %}
+     <div class="features">
+        <!--<h1> Мой аккаунт </h1>
+        <p> Ты существуешь теперь, поздравляю. Тут должно быть горизонтальное меню обязательно. </p>-->
+
+        <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+         <h3> Мой аккаунт </h3>
+            <ul class="menu-main">
+                <a href=""><li><i class="bi bi-clock"></i> Заказы в пути </li></a>
+                <a href=""><li><i class="bi bi-check2-square"></i> Доставленные заказы </li></a>
+                <a href=""><li><i class="bi bi-eye"></i> Дополнительная информация </li></a>
+                <a href=""><li><i class="bi bi-envelope"></i> Помощь </li></a>
+            </ul>
+        <style>
+            h3 { margin-top:5px; font-size: 30px; }
+            .menu-main ul {
+                background: #FDD9B5;
+                padding: 0.4 em;
+            }
+            .menu-main li {
+            margin: 0;
+            padding: 0;
+            color: black;
+            font-family: cursive;
+            font-weight: bold;
+            text-align: center;
+            display:inline-block;
+            padding: 5px 55px;
+            font-size: 15pt;
+
+
+             }
+
+        </style>
+        {{ main }}
+        {% for el in values %}
+            <p> {{ el }} </p>
+        {% endfor %}
+
+    </div>
+{% endblock %}
